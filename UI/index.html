@@ -55,6 +55,26 @@
 	<footer class="mainFooter">
 		<p>Questioner, Copyright &COPY; 2019 </p>
 	</footer>
+
+
+	<div class="form-popup" id="myRegisterForm">
+		<form action="dashboard.html" class="form-container" >
+			
+			<label for="name"><b>Name</b></label>
+			<input type="text" placeholder="Enter Name" name="name" >
+			<label for="email"><b>Email</b></label>
+			<input type="text" placeholder="Enter Email" name="email" >
+			<!--button type="submit" class="btn button2"  onclick="openPassForm()" >Next</button-->
+			<!--button type="submit" class="btn cancel" onclick="closePassForm()">Cancel</button-->
+			<label for="psw"><b>Password</b></label>
+			<input type="password" placeholder="Enter Password" name="psw" required>
+			<label for="cpsw"><b>Confirm Password</b></label>
+			<input type="password" placeholder="Confirm Password" name="cpsw" required>
+			
+			<button type="submit" class="btn button2 sign ">Sign Up</button>
+			<button type="submit" class="btn cancel" onclick="closeRegisterForm()">Cancel</button>
+		</form>
+
 		<div class="form-popup" id="myLoginForm">
 		<form action="dashboard.html" class="form-container" id="loginform">
 			<h1>Log in</h1>
@@ -68,8 +88,6 @@
 		</form>
 	</div>
 	
-
-
 
 </body>
 </html>
