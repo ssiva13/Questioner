@@ -16,7 +16,9 @@
 			    <ul>
 					<li><a href="index.html" >Log Out</a></li>
 					<li><a href="meetups.html">Meet ups</a></li>
-					<li><a href="dashboard.html">Dashboard</a></li>
+
+					<li class="current"><a href="dashboard.html">Dashboard</a></li>
+
 			    </ul>
 		    </nav>
 	    </div>
@@ -24,11 +26,13 @@
 
     <section id="main" >
 		<div class="container" id="feed">
+
 			<table  id="main-table">
-				<caption><h1 class="meetup">Meetup Top Feed</h1></caption>
+				<caption><h1 class="meetuph">Meetup Top Feed</h1></caption>
 
 				<th id="theader" colspan="2">Farmers Meetup</th>
-				<tr>
+				<tr class="main-t">
+
 					<td>
 						<h6>Details</h6>
 						<p>
@@ -42,8 +46,9 @@
 						</div>
 					</td>
 				</tr>
-				<tr>
+				<tr class="" >
 				<td colspan="2">
+
 					<table  class="que">
 						<th></th>
 						<th class="qheader">
@@ -60,7 +65,9 @@
 								    <td>
 									   <img class="icon hatch floating cursor-pointer" src="./img/thumbs_up.svg" />
 								    </td>
-								    <td>41</td>
+
+								    <td>43</td>
+
 								    <td>
 									   <img class="icon" src="./img/thumbs_downdd.png" />
 								    </td>
@@ -97,9 +104,13 @@
 							</tr>
 						</tr>
 					</table>
+
+
+
 				</td>
 				</tr>
-				<tr>
+				<tr class="main-t" >
+
 						<td colspan="2">
 
 
@@ -155,10 +166,14 @@
 										</td>
 										</tr>
 									</tr>
-								</table>			
+
+								</table>
+			
+			
 							</td>
 				</tr>
-				<tr>
+				<tr class="" >
+
 						<td colspan="2">
 
 
@@ -215,20 +230,17 @@
 										</tr>
 									</tr>
 								</table>
+
+			
 							</td>
 				</tr>
+			
+
 			</table>
 		</div>
-
-	</section>
-	
-	<footer class="mainFooter">
-		<p>Questioner, Copyright &COPY; 2019 </p>
-	</footer>
-	
-
-			<div class="form-popup" id="commentForm">
+		<div class="form-popup" id="commentForm">
 				<form action="meetup.html" class="form-container" >
+
 					<h1>Post Comment</h1>
 					<textarea></textarea>
 					<button type="submit" class="btn post button2 sign ">Post Coment</button>
@@ -239,7 +251,9 @@
 		
 		
 			<div class="form-popup" id="questionForm">
+
 				<form action="meetup.html" class="form-container" >
+
 					<h1>Post Question</h1>
 					<textarea></textarea>
 					<button type="submit" class="btn button2 sign ">Post Question</button>
@@ -247,6 +261,12 @@
 				</form>
 			</div>
 					
+
+	</section>
+	
+	<footer class="mainFooter">
+		<p>Questioner, Copyright &COPY; 2019 </p>
+	</footer>
 
 
 </body>
