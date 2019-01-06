@@ -19,8 +19,6 @@ function closeRegisterForm() {
 }
 
 
-
-
 function openQuestionForm() {
 	document.getElementById("questionForm").style.display = "block";
 }
