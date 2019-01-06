@@ -21,6 +21,9 @@ The project is managed using.The board can be viewed on [Pivotal Tracker](https:
 
 - Firefox Browser
 
+
+Go to https://ssiva13.github.io/Questioner/UI/
+
 ## Testing
 
 Clone this repo on your machine in a folder of choice
