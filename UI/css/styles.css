@@ -1,17 +1,14 @@
 @import 'popup.css';
-@import 'table.css';
-@import 'forms.css';
-@import 'dash.css';
+@import 'style.css';
 
 body{
-	font-size: 16px;
-	/*
+	/*font-size: 16px;
 	font-family: "Montserrat", sans-serif;
 	line-height: 1.5;*/
 	font: 15px/1.5 "Montserrat", sans-serif;
 	padding: 0;
 	margin: 0;
-	background-color: #f6faf9;
+	background-color: #d9e6e2;
 	height: 100%;
 }
 /*global containers*/
@@ -54,7 +51,7 @@ ul{
 	color: white;
 	padding-top: 26px;
 	min-height: 67px;
-	border-bottom: #79b82b 8px solid;
+	border-bottom: #79b82b 6px solid;
 }
 .mainHeader a{
 	color: white;
@@ -84,61 +81,129 @@ ul{
 	color:#4db4bc;
 	font-weight: bold;
 }
-.confused{
-	display:none;
-} 
 .mainHeader a:hover , .mainHeader a:visited{
 	color: #f6faf9;
 	font-weight: bold;
 }
 
-/*End of header styling*/
-
-.btn {
-	border-radius: 8px;
-	color: white;
+/*Showcase -------------- Brief explanation of Questioner*/
+#showcase{
+	min-height: 600px;
+	background: url(../img/index_bg.jpg) no-repeat;
 	text-align: center;
-	text-decoration:none;
-	font-weight: bold;
-	font-size: 15px;
-	-webkit-transition-duration: 0.4s; /* Safari */
-	transition-duration: 0.4s;
-	cursor: pointer;
+	color: #d9e6e2;
+}
+#showcase h1{
+	margin-top: 20%;
+	margin-bottom: 20px;
+	font-size: 50px;
+}
+#showcase p{
+	font-size: 20px;
+}
+
+/*Removed*
+#create{
+	padding: 16px;
+	color: #d9d9d9;
+	background: #028a36;
+}
+#create h1{
+	float:left;
+}
+*/
+/* The two main buttons in the page*/
+#join {
+	margin-bottom: -19px;
+	background: #bbdb9600;
+	min-height: 250px;
 	
+}
+#join .box{
+	float: left;
+	width: 30%;
+	padding: 20px;
+	text-align: center;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	
+}
+#join .box img{
+	width: 80px;
+	height: 70px;	
 }
 
 .asking{
 	margin-top: 3px;
 	color: #028a36;
-	font-size: 15px;
+	font-size: 17px;
 	padding: 6px;
 	border: 1px solid #028a36;
-	width: 100%;	
+	width: 25%;	
 }
 .asking:hover{
 	color: #f6faf9;
 	background: #028a36;
 	border: none;
 }
-.ask{
-	padding: 26px;
-}
-.comment{
-	margin-top: 2px;
-	margin-bottom: 1px;
-	float: right;
-	font-style: italic;
-}
-.hcomment{
-	margin-bottom: 2px;
-	font-weight: 800;
-	font-style: italic;
-}
-#feed h1{
-	text-align: center;
-	font-size: 32px;
-}
 
+
+table{
+	column-span: inherit;
+	width: 200px;
+	height:auto;
+}
+table .icon{
+	width: 26px;
+	height: 17px;
+	cursor: pointer;
+	float: left;
+}
+table .icon:hover{
+	width: 36px;
+	height: 27px;
+}
+table caption{
+	color: #028a36;
+	text-align: left;
+	padding-left: 17px;
+}
+td{
+	font-style: italic;
+	font-weight: 400;
+	color:#18747a;
+	padding: 6px;
+	text-align: center;
+}
+.details{
+	
+	background: rgba(255, 255, 0, 0);
+}
+.text-center{
+	float: right;
+	margin-left: 80px;
+	margin-right: 1px;
+	height: 100%;
+}
+a{
+	text-decoration: none;
+	color: #028a36;
+	
+}
+a:visited{
+	color: #79b82b;
+}
+h4{
+	
+	margin-bottom: -8px;
+}
+.resetpass{
+	color: #02421b;
+}
+.meetup{
+	color:#028a36;
+	font-weight: bold;
+}
 .button2 {
 	background-color: #028a36; 
 	color: white; 
@@ -215,141 +280,75 @@ ul{
 	 display: inline-block;
  }
 
- #banner img{
-	width: 26px;
-	height: 17px;
-	cursor: pointer;
-	
-}
-#banner img:hover{
-	width: 36px;
-	height: 27px;
-}
- .image {
-	 display: inline-block;
-	 width: 90%;
-	 margin: 10px 5%;
-	 text-align: center;
-	 text-transform: capitalize;
-	 color:black;
-	 font-style: italic;
-	 font-weight: bold;
-	 font-size: 19px;
- }
- 
- .image img{
-	 width: 17%;
-	 height: 32px;
-	 float: left;
-	 
- }
- .image img#cross{
-	 float: right;
- }
- 
- 
- .details {
-	display: grid;
- }
- 
- .details-title {
-	margin: 0;
-	font-size: 18px;
-	font-weight: bold;
-	opacity: 0.8;
- }
- 
- .details-date {
-	font-size: 13px;
-	color: #555454;
-	margin-top: 5px;
-	margin-bottom: 5px;
- }
- 
- .details-venue {
-	font-size: 13px;
-	color: #555454;
- }
- 
 
-#join {
-	margin-bottom: 20px;
-	background: #bbdb96;
-	
+
+.button1 {
+	background-color: #4db4bc00; 
+	color: black; 
+	border: 2px solid #028a36;
 }
-#join .box{
-	float: left;
-	width: 30%;
-	padding: 20px;
-	text-align: center;
-	
-	margin-top: 10px;
-	margin-bottom: 10px;
-	
-}
-#join .box img{
-	width: 80px;
-	height: 70px;	
-}
-/* The dropdown container */
-.dropdown {
-	float: right;
-	overflow: hidden;
-}
-/* Dropdown button */
-.dropdown .dropbtn {
-	font-size: 14px;
-	border: none;
-	outline: none;
-	color: white;
-	padding: 8px 8px;
-	background-color: inherit;
-	font-family: inherit; /* Important for vertical align on mobile phones */
-	margin: 0; /* Important for vertical align on mobile phones */
-}
-  
-   /* Dropdown content (hidden by default) */
-   .dropdown-content {
-	display: none;
-	position: absolute;
-	background-color: #bbdb96;
-	min-width: 160px;
-	box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.2);
-	z-index: 1;
-	border-radius: 4px;
-	
-   }
    
-   /* Links inside the dropdown */
-   .dropdown-content a {
-	float: none;
-	color: black;
-	padding: 6px 0px;
-	text-decoration: none;
-	display: block;
-	text-align: center;
-	border-radius: 4px;
-   }
-   
-   /* Add a grey background color to dropdown links on hover */
-   .dropdown-content a:hover {
+.button1:hover {
 	background-color: #028a36;
-   }
-   
-   /* Show the dropdown menu on hover */
-   .dropdown:hover .dropdown-content {
-	display: inline;
-   }
+	color: white;
+	border: 2px solid #4db4bc;
+}
 
-.form-bg{
-	background: #79b82bd3;
+
+
+aside.top-sidebar{
+	float:right;
+	width: 30%;
+	margin-top: 0px;
+
+	display: block;
 	
 }
-.reset{
-
-	background:#bbdb96;
+#feed h1{
+	text-align: center;
+	font-size: 32px;
 }
 
+article#main-col{
+	width:80%; 
+}
+#main .container #main-col h2{
+	margin-top: 2px;
+	margin-bottom: 1px;
+	font-size: 26px;
+}
+#main .container #main-col #ques{
+	margin-top: 2px;
+	margin-bottom: 1px;
+	font-size: 21px;
+	
+}
+#main .container #main-col h3{
+	margin-top: 2px;
+	margin-bottom: 1px;
+	font-size: 15px;
+	
+}
+#main .container #main-col content h5{
+	margin-top: 6px;
+	margin-bottom: 1px;
+	float: left;
+	
+	
+}
+#main .container #main-col content .comment{
+	margin-top: 6px;
+	margin-bottom: 1px;
+	float: right;
+	font-style: italic;
+	
+}
+.post-info{
+	font-style: italic;
+	font-size: 95%;
+	color: green;
+	margin-top: 1px;
+ }
 
 
 .mainFooter p{
@@ -362,19 +361,14 @@ ul{
 	margin-top: 20px;
 	color: #d9e6e2;
 	text-align: center;
-	
+	margin-bottom: 0px;
 	min-height: 43px;
 	padding: 5px;
 }
 
 
 @media(max-width:768px){
-	.mainHeader #brand, #join .box, 
-	.mainHeader nav, .meetuph, .mainHeader nav li, 
-	#topbar form,  #join h1, #join form, .meetups,
-	 .meetup , .meetup-dash, .meetups-dash, .box-que,
-	 .top-que, .image, .v, .dropdown-content, .dropdown,
-	 .dropbtn, .dropdown-content a, .dropdown-content a:hover {
+	.mainHeader #brand, .mainHeader nav, .mainHeader nav li, #join .box, #topbar, #join{
 		float:none;
 		text-align: center;
 		width: 100%;
@@ -386,34 +380,14 @@ ul{
 	}
 	#showcase h1{
 		margin-top:0px;
-
 	}
-	.resetf{
-		color: black;
-		background:#bbdb96;
+	#topbar button{
+		width: 100%;
+		display: block;
+	}
+}
+@media(max-height:400px){
+	body{
 		
 	}
-	.dropdown-content{
-		display: none;
-		text-align: center;
-	}
-	.dropdown-content a:hover {
-		background-color: #028a3600;
-		color: white;
-		text-align: center;
-	   }
-	      /* Links inside the dropdown */
-   .dropdown-content a {
-	float: none;
-	color: rgb(255, 255, 255);
-	padding: 6px 0px;
-	text-decoration: none;
-	display: none;
-	text-align: center;
-	border-radius: 4px;
-   }
-   .confused{
-	display:block;
-	text-align: center;
-	} 
 }
