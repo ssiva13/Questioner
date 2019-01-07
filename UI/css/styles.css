@@ -151,6 +151,20 @@ ul{
 	border: 2px solid #028a36;
 }
 
+
+.button1 {
+	background-color: #4db4bc00; 
+	color: black; 
+	border: 2px solid #028a36;
+}
+   
+.button1:hover {
+	background-color: #028a36;
+	color: white;
+	border: 2px solid #4db4bc;
+}
+
+
  .meetups {
 	width: 100%;
 	display: flex;
