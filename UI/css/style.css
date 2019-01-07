@@ -324,7 +324,7 @@ ul{
    
    /* Show the dropdown menu on hover */
    .dropdown:hover .dropdown-content {
-	display: inline;
+	display: none;
    }
 
 .form-bg{
