@@ -312,7 +312,7 @@ ul{
 	color: black;
 	padding: 6px 0px;
 	text-decoration: none;
-	display: block;
+	display: none;
 	text-align: center;
 	border-radius: 4px;
    }
@@ -324,7 +324,7 @@ ul{
    
    /* Show the dropdown menu on hover */
    .dropdown:hover .dropdown-content {
-	display: inline;
+	display: none;
    }
 
 .form-bg{

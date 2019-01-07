@@ -217,6 +217,70 @@ h4{
 }
 
 
+.button1 {
+	background-color: #4db4bc00; 
+	color: black; 
+	border: 2px solid #028a36;
+}
+   
+.button1:hover {
+	background-color: #028a36;
+	color: white;
+	border: 2px solid #4db4bc;
+}
+
+
+ .meetups {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	margin-top: 20px;
+	flex-wrap: wrap;
+	column-gap: 20px;
+	padding: 0 20px;
+	box-sizing: border-box;
+ }
+ .meetups a{
+	 text-decoration: none;
+	 color: #028a36;
+ }
+ .meetup {
+	width: calc(100%/4 - 20px);
+	overflow: hidden;
+	border-radius: 5px;
+	display:grid;
+	border: 0px solid #cfcfcf;
+	margin-bottom:20px;
+	background: #79b82b36;
+ }
+ 
+ .meetup:hover {
+	box-shadow: 2px 2px 4px 2px #b9b9b9;
+ }
+ .meetup img {
+	width: 99%;
+	align-self: center;
+	text-align: center;
+	font-size: 22px;
+	height: 70%;
+	border: #79b82b36 2px;
+	border-radius: 5px;
+ }
+ 
+ .meetup-info {
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	box-sizing: border-box;
+ }
+ #banner{
+	 
+	 overflow: hidden;
+	 display: inline-block;
+ }
+
+
 
 .button1 {
 	background-color: #4db4bc00; 
