@@ -43,3 +43,8 @@ class MeetupsModel():
 		meetup1 = {"id" : meetup["m_id"],"topic":meetup["topic"],"details":meetup["details"],"createdOn":meetup["createdOn"],"location":meetup["location"],
 		"happeningOn":meetup["happeningOn"],"Tags":meetup["Tags"] }
 		return meetup1
+
+
+	
+	
+

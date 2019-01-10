@@ -38,13 +38,16 @@ def create_meetup():
 
 
 @meetups_bp.route("/meetups/<int:m_id>", methods=["GET"])
+
 def get_meetup(m_id):
 	meetup = MeetupsModel.get_meetup(m_id)
 	""" If it exists"""
 	if type(meetup)==dict:
+
 		return jsonify({
 			"status":201,
 			"MEET UP" : meetup}), 200
+
 	return jsonify({
 		"status":404,
 		"message" : "Meetup was not found"}), 404
