@@ -1,0 +1,13 @@
+language: python
+python:
+    - "3.6.7"
+
+install:
+    - pip3 install -r requirements.txt
+
+script:
+    - pytest
+    - coverage run --source=app -m pytest && coverage report
+
+after_success:
+- coveralls
