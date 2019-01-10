@@ -44,6 +44,13 @@ class MeetupsModel():
 		"happeningOn":meetup["happeningOn"],"Tags":meetup["Tags"] }
 		return meetup1
 
+	@classmethod
+	def get_upcoming(cls):
+		"""check if there are any meetups"""
+		if len(Meetups) == 0:
+			return "No meetups"
+		
+		return Meetups
 
 	
 	

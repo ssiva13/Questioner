@@ -43,24 +43,21 @@ def get_meetup(m_id):
 	meetup = MeetupsModel.get_meetup(m_id)
 	""" If it exists"""
 	if type(meetup)==dict:
-
 		return jsonify({
 			"status":201,
 			"MEET UP" : meetup}), 200
-
 	return jsonify({
 		"status":404,
 		"message" : "Meetup was not found"}), 404
 
-
-'''
 @meetups_bp.route("/meetups/upcoming/", methods=["GET"])
-def get_upcoming_meetup(happeningOn):
-	meetups = MeetupsModel.get_upcoming_meetup(happeningOn)
+def get_mp_upcoming():
+	meetups_up = MeetupsModel.get_upcoming()
 	""" If any exists"""
-	if type(meetups)==dict:
-		return jsonify({"MEET UP" : meetups}), 200
+	if type(meetups_up)==dict:
+		return jsonify({
+			"status":200,
+			"MEET UP" : meetups_up}), 200
 	return jsonify({
 		"status":404,
 		"message" : "Meetup was not found"}), 404
-'''
