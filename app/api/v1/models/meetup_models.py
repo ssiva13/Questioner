@@ -44,5 +44,7 @@ class MeetupsModel():
 		"happeningOn":meetup["happeningOn"],"Tags":meetup["Tags"] }
 		return meetup1
 
+
 	
 	
+
