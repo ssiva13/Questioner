@@ -43,7 +43,7 @@ def get_meetup(m_id):
 	""" If it exists"""
 	if type(meetup)==dict:
 		return jsonify({
-			
+			"status":201,
 			"MEET UP" : meetup}), 200
 	return jsonify({
 		"status":404,
