@@ -1,7 +1,9 @@
 """Meetup models"""
 
 import datetime
+
 from datetime import date
+
 """ Initialize list to hold all meetups"""
 Meetups = []
 
@@ -14,11 +16,13 @@ class MeetupsModel():
 		self.topic=topic
 		self.details=details
 		self.location=location
+
 		self.tags=tags
 		createdOn=date.today()
 		createdOn=createdOn.strftime("%d/%m/%Y")
 		#happeningOn=date.today() + datetime.timedelta(days=7)
 		self.happeningOn=happeningOn
+
 		self.createdOn=createdOn
 		'''self.images=images'''
 		self.m_id=len(Meetups)+1
@@ -30,6 +34,7 @@ class MeetupsModel():
 			"createdOn":self.createdOn,
 			"location":self.location,
 			"happeningOn":self.happeningOn,
+
 			"Tags":self.tags
 			
 		}
@@ -38,10 +43,12 @@ class MeetupsModel():
 	@classmethod
 	def get_meetup(cls, m_id):
 		"""check if meetup id is greater than length of dict"""
+
 		if m_id>len(Meetups):
 			return "The meetup record was not found"
 		meetup = Meetups[m_id-1]
 		meetup1 = {"m_id" : meetup["m_id"],"topic":meetup["topic"],"details":meetup["details"],"createdOn":meetup["createdOn"],"location":meetup["location"],
+
 		"happeningOn":meetup["happeningOn"],"Tags":meetup["Tags"] }
 		return meetup1
 
@@ -53,5 +60,3 @@ class MeetupsModel():
 		
 		return Meetups
 
-	
-	

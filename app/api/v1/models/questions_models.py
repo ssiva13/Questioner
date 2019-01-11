@@ -1,8 +1,9 @@
-""" Models for handling Meetup data """
+""" Models for handling question data """
 """Meetup models"""
 
 import datetime
-""" Initialize list to hold all meetups"""
+
+""" Initialize list to hold all questions"""
 Questions = []
 
 
@@ -20,6 +21,8 @@ class QuestionModel():
 		self.title=title
 		self.meetup=meetup
 		self.body=body
+
+
 		self.q_id=len(Questions)+1
 	def post_question(self):
 		question = {
@@ -34,5 +37,7 @@ class QuestionModel():
 		}
 		Questions.append(question)
 		return Questions
+  
+  
 	
 	

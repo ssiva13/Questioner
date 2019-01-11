@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/ssiva13/Questioner.svg?branch=develop)](https://travis-ci.com/ssiva13/Questioner)	[![Coverage Status](https://coveralls.io/repos/github/ssiva13/Questioner/badge.svg?branch=devlop)](https://coveralls.io/github/ssiva13/Questioner?branch=develop)
+
 # Questioner-api
 It is a crowd-sourcing platform for meetup questions. Questioner helps the meetup organizer prioritize questions to be answered. Other users can vote on asked questions and they bubble to the top or bottom of the log.
 
