@@ -73,12 +73,13 @@ class TestMeetup(BaseTest):
 				    })
 	
 	def test_get_meetups_all_success(self):
+		today_now = date.today()
 		response = self.client.get('/api/v1/meetups/upcoming/', data=json.dumps(self.meetup2), content_type="application/json")
 		self.assertEqual(response.status_code, 200)
 		self.assertEqual(json.loads(response.get_data()),
 		{
     		"MEET-UP": [{    	
-			     "createdOn":"11/01/2019",
+			     "createdOn":today_now.strftime("%d/%m/%Y"),
 				"details": "Lorem Lorem Ipsum has it all",
             		"happeningOn": "21/01/2019",
             		"location": "Home",
@@ -88,13 +89,14 @@ class TestMeetup(BaseTest):
         		}],
 			   "status":200})
 	def test_get_single_meetup(self):
+		today_now = date.today()
 		response = self.client.get('/api/v1/meetups/1', data=json.dumps(self.meetup2), content_type="application/json")
 		self.assertEqual(response.status_code, 200)
 		self.assertEqual(json.loads(response.get_data()),
 		{
     		"MEET UP": {
         		"Tags": "coding",
-        		"createdOn": "11/01/2019",
+        		"createdOn": today_now.strftime("%d/%m/%Y"),
         		"details": "Lorem Lorem Ipsum has it all",
         		"happeningOn": "21/01/2019",
         		"location": "Home",
