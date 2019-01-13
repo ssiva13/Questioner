@@ -5,7 +5,8 @@ import datetime
 from datetime import date
 
 """ Initialize list to hold all meetups"""
-Meetups = []
+Meetups = [  ]
+RSVPS =[]
 
 
 """Class model for storing meetups data"""
@@ -60,3 +61,18 @@ class MeetupsModel():
 		
 		return Meetups
 
+class MeetUpRsvps():
+
+	@classmethod
+	def add_rsvps(cls, m_id):
+		if m_id<len(Meetups):
+			m_ide = Meetups[m_id-1]
+			meetup1 = {"m_id" : m_ide["m_id"],
+				"topic":m_ide["topic"]
+				}
+			return meetup1
+		return "The meetup record was not found"
+				
+
+	
+		
