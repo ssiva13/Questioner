@@ -60,7 +60,10 @@ class TestMeetup(BaseTest):
             			"m_id": 1,
             			"topic": "My first meetup"
 					  }
-    				]})
+    				],
+   				 "status": 201
+					})
+				
 
 				    
 	def test_created_meetup_fail(self):
@@ -104,10 +107,18 @@ class TestMeetup(BaseTest):
         		"topic": "My first meetup"
     		},
     			"status": 200
-		}
-		)
+		})
 	
 	def test_get_single_meetup_id_not_found(self):
 		response = self.client.get('/api/v1/meetups/19', data=json.dumps(self.meetup1), content_type="application/json")
 		self.assertEqual(response.status_code, 404)
+	
+	def test_rsvp_empty_meetup_list(self):
+		meetupd = {
+    			"u_id": 12,
+    			"resp": "yes"
+			}
+		response = self.client.post('/api/v1//meetups/1/rsvps/', data=json.dumps(meetupd), content_type='application/json')
+		self.assertEqual(response.status_code,404)
+		
 		

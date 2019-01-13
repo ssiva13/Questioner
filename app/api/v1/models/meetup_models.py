@@ -5,43 +5,7 @@ import datetime
 from datetime import date
 
 """ Initialize list to hold all meetups"""
-Meetups = [ {
-            "Tags": "foof",
-            "createdOn": "13/01/2019",
-            "details": "plant trees all day",
-            "happeningOn": "13/05/2019",
-            "location": "sagana farm",
-            "m_id": 1,
-            "topic": "tree palnting"
-        },
-        {
-            "Tags": "foof",
-            "createdOn": "13/01/2019",
-            "details": "plant trees all day",
-            "happeningOn": "13/05/2019",
-            "location": "sagana farm",
-            "m_id": 2,
-            "topic": "tree palnting"
-        },
-        {
-            "Tags": "foof",
-            "createdOn": "13/01/2019",
-            "details": "plant trees all day",
-            "happeningOn": "13/05/2019",
-            "location": "sagana farm",
-            "m_id": 2,
-            "topic": "tree palnting"
-        },
-        {
-            "Tags": "foof",
-            "createdOn": "13/01/2019",
-            "details": "plant trees all day",
-            "happeningOn": "13/05/2019",
-            "location": "sagana farm",
-            "m_id": 2,
-            "topic": "tree palnting"
-        }
-	   ]
+Meetups = [  ]
 RSVPS =[]
 
 
