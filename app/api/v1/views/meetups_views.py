@@ -1,6 +1,10 @@
 """HAndles Views meetup endpoints"""
-from flask import Blueprint, jsonify, request
+from flask import Blueprint, jsonify, request, make_response, json
 from ..models.meetup_models import MeetupsModel
+from ..models.meetup_models import MeetUpRsvps
+from ..models.meetup_models import Meetups
+from ..models.meetup_models import RSVPS
+
 
 
 
@@ -33,9 +37,11 @@ def create_meetup():
 	"""""If all required fields are filled proceed"""""
 	meetup = MeetupsModel(topic, details, location, happeningOn, tags)
 	data_submitted = meetup.create_meetup()
-	return jsonify({
-		
-		"MEETUPS":data_submitted}),201
+	return make_response(jsonify({
+			"status": 201,
+			"MEETUPS":data_submitted
+			})),201
+
 
 
 @meetups_bp.route("/meetups/<int:m_id>", methods=["GET"])
@@ -64,3 +70,35 @@ def get_mp_upcoming():
 	return jsonify({
 		"status":404,
 		"message" : "Meetup was not found"}), 404
+
+@meetups_bp.route("/meetups/<int:m_id>/rsvps/", methods=["POST"])
+def rsvps_meetup(m_id):
+	u_id = request.json["u_id"]
+	resp = request.json["resp"]
+	#meetup = ""
+
+	"""Checking ids and response"""
+	
+	if not resp or not u_id or not m_id:
+		return make_response(jsonify({
+			"status":400,
+			"message":"Please give a valid rsvp feedback"
+		})), 400
+	
+	rsvp4 = MeetUpRsvps.add_rsvps(m_id)
+	data ={"resp":resp,"u_id":u_id}
+	if type(rsvp4)==dict:
+		rsvp4.update(data)
+		RSVPS.append(rsvp4)
+
+		return make_response(jsonify({
+			"status": 201,
+			"My RSVPed MEETUPS": RSVPS
+		})), 201
+	#RSVPS.append(rsvp4)
+	return make_response(jsonify({
+		"status":404,
+		"message":rsvp4
+	})),404
+
+	
