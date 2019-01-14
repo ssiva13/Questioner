@@ -9,17 +9,17 @@ question_bp = Blueprint('questions', __name__, url_prefix='/api/v1/')
 
 @question_bp.route("/ha")
 def home():
-	return 'Farmrtrtyring test'
+	return 'Farmers Gala Test'
 
 
-"""Endpoint to create A meetup"""
+"""Endpoint to create A question"""
 @question_bp.route("/questions", methods=["POST"])
 def create_meetup():
 	createdOn = request.json["createdOn"]
 	createdBy = request.json["createdBy"]
-	body = request.json["meetup"]
+	body = request.json["body"]
 	title = request.json["title"]
-	meetup = request.json["body"]
+	meetup = request.json["meetup"]
 	votes = request.json["votes"]
 	
 
@@ -30,8 +30,53 @@ def create_meetup():
 			"message":"Please fill in all the required fields"}), 400
 
 	"""""If all required fields are filled proceed"""""
-	question = QuestionModel(createdBy, createdOn, meetup, title, body, votes)
+	question = QuestionModel(createdBy, createdOn, body, title, meetup, votes)
 	data_submitted = question.post_question()
 	return jsonify({
 		"status":201,
 		"QUESTIONS":data_submitted}),201
+
+@question_bp.route('/questions/<int:q_id>/upvote/', methods=['PATCH'])
+def upvote_que(q_id):
+	que = QuestionModel.vote_question(q_id)
+	if type(que)==dict:
+		que1 ={
+				"votes" : que["votes"] + 1,
+				"old_vote_count": que["votes"],
+				"q_id" 	: 	que["q_id"],
+				"title"	:	que["title"],
+				"meetup"	:	que["meetup"],
+				"body"	:	que["body"],
+			}
+		#que1.update(que)
+		return make_response(jsonify({
+			"status": 202,
+			"Question" : que1
+		})), 202
+	return make_response(jsonify({
+				"status":404,
+				"message":que
+					})),404
+
+@question_bp.route('/questions/<int:q_id>/downvote/', methods=['PATCH'])
+def downvote_que(q_id):
+	que = QuestionModel.vote_question(q_id)
+	if type(que)==dict:
+		que1 ={
+				"votes" : que["votes"] - 1,
+				"old_vote_count": que["votes"],
+				"q_id" 	: 	que["q_id"],
+				"title"	:	que["title"],
+				"meetup"	:	que["meetup"],
+				"body"	:	que["body"],
+			}
+		#que1.update(que)
+		return make_response(jsonify({
+			"status": 202,
+			"Question" : que1
+		})), 202
+
+	return make_response(jsonify({
+				"status":404,
+				"message":que
+					})),404

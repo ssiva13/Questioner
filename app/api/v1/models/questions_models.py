@@ -11,7 +11,7 @@ Questions = []
 
 class QuestionModel():
 	"""Meetup instance variable"""
-	def __init__(self,createdOn,createdBy, body, title,meetup,votes):
+	def __init__(self,createdBy, createdOn, body, title,meetup,votes):
 
 		createdOn=datetime.datetime.now()
 		createdOn=createdOn.strftime("%d/%m/%Y")
@@ -37,7 +37,22 @@ class QuestionModel():
 		}
 		Questions.append(question)
 		return Questions
-  
+
+	@classmethod
+	def vote_question(cls, q_id):
+		"""check if question id is greater than length of dict"""
+
+		if q_id<=len(Questions):	
+			que = Questions[q_id-1]
+			que1 = {
+				"q_id" 	: 	que["q_id"],
+				"title"	:	que["title"],
+				"meetup"	:	que["meetup"],
+				"body"	:	que["body"],
+				"votes"	:	que["votes"]
+				}
+			return que1
+		return "The question record was not found"
   
 	
 	
