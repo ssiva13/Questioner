@@ -17,6 +17,7 @@ class BaseTest(unittest.TestCase):
 			"createdOn" : "",
 			"createdBy" : "Simon Siva",
 			"meetup" : 2,
+			"q_id": 1,
 			"title" : "Nursery",
 			"votes" : 4
 	   		}
@@ -52,7 +53,7 @@ class TestQuestion(BaseTest):
     "QUESTIONS": [
         {
             "body": "How do I prepare a rice nursery",
-            "createdBy": "",
+            "createdBy": "Simon Siva",
             "createdOn": today_now.strftime("%d/%m/%Y"),
             "meetup": 2,
             "q_id": 1,
@@ -73,5 +74,49 @@ class TestQuestion(BaseTest):
     			"message": "Please fill in all the required fields",
     			"status": 400
 				})
-	
-	
+		
+	def test_upvote_success(self):
+		response = self.client.patch('/api/v1/questions/1/upvote/', data=json.dumps(self.question1), content_type= 'application/json')
+		self.assertEqual(response.status_code, 202)
+		self.assertEqual(json.loads(response.get_data()),{
+			    "Question": {
+        				"body": "How do I prepare a rice nursery",
+        				"meetup": 2,
+        				"old_vote_count": 4,
+        				"q_id": 1,
+        				"title": "Nursery",
+        				"votes": 5
+    					},
+    						"status": 202
+		    			})
+			
+	def test_upvote_fail(self):
+		response = self.client.patch('/api/v1/questions/5/upvote/', data=json.dumps(self.question1), content_type= 'application/json')
+		self.assertEqual(response.status_code, 404)
+		self.assertEqual(json.loads(response.get_data()),{
+			    "message": "The question record was not found",
+    				"status": 404
+				})
+
+	def test_downvote_success(self):
+		response = self.client.patch('/api/v1/questions/1/downvote/', data=json.dumps(self.question1), content_type= 'application/json')
+		self.assertEqual(response.status_code, 202)
+		self.assertEqual(json.loads(response.get_data()),{
+			    "Question": {
+        				"body": "How do I prepare a rice nursery",
+        				"meetup": 2,
+        				"old_vote_count": 4,
+        				"q_id": 1,
+        				"title": "Nursery",
+        				"votes": 3
+    					},
+    						"status": 202
+		    			})
+
+	def test_downvote_fail(self):
+		response = self.client.patch('/api/v1/questions/5/upvote/', data=json.dumps(self.question1), content_type= 'application/json')
+		self.assertEqual(response.status_code, 404)
+		self.assertEqual(json.loads(response.get_data()),{
+			    "message": "The question record was not found",
+    				"status": 404
+				})

@@ -4,25 +4,7 @@
 import datetime
 
 """ Initialize list to hold all questions"""
-Questions = [
-	{
-			"body" : "How do I prepare a rice nursery",
-			"createdOn" : "",
-			"createdBy" : "Simon Siva",
-			"meetup" : 2,
-			"title" : "Nursery",
-			"q_id" : 1,
-			"votes" : 4
-	   		},{
-			"body" : "How do I prepare a rice nursery",
-			"createdOn" : "",
-			"createdBy" : "Simon Siva",
-			"meetup" : 2,
-			"title" : "Nursery",
-			"votes" : 9,
-			"q_id" : 2
-	   		}
-]
+Questions = []
 
 
 """Class model for storing meetups data"""
