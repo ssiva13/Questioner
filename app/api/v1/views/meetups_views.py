@@ -26,16 +26,16 @@ def create_meetup():
 	details = request.json["details"]
 	location = request.json["location"]
 	happeningOn = request.json["happeningOn"]
-	tags = request.json["tags"]
+	Tags = request.json["Tags"]
 
 	"""Checking json values"""
-	if not topic or not details or not location or not happeningOn or not tags:
+	if not topic or not details or not location or not happeningOn or not Tags:
 		return jsonify({
 			"status":400,
 			"message":"Please fill in all the required details"}), 400
 
 	"""""If all required fields are filled proceed"""""
-	meetup = MeetupsModel(topic, details, location, happeningOn, tags)
+	meetup = MeetupsModel(topic, details, location, happeningOn, Tags)
 	data_submitted = meetup.create_meetup()
 	return make_response(jsonify({
 			"status": 201,
@@ -101,4 +101,20 @@ def rsvps_meetup(m_id):
 		"message":rsvp4
 	})),404
 
-	
+@meetups_bp.route("/meetups/<int:m_id>/delete/", methods=["delete"])
+def delete_meetup(m_id):
+
+	meetupd = MeetupsModel.get_meetup(m_id)
+	""" If it exists"""
+	if type(meetupd)==dict:
+		Meetups.remove(meetupd)
+		return jsonify({
+			"status":200,
+		"message" : "The selected meetup was deleted successfully",
+		"MEETUPS":Meetups
+			}), 200
+	return jsonify({
+		"status":404,
+		"MESSAGE" : meetupd,
+		#"MEETUPS": Meetups
+			}), 404

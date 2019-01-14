@@ -5,7 +5,7 @@ import datetime
 from datetime import date
 
 """ Initialize list to hold all meetups"""
-Meetups = [  ]
+Meetups = []
 RSVPS =[]
 
 
@@ -13,12 +13,12 @@ RSVPS =[]
 
 class MeetupsModel():
 	"""Meetup instance variable"""
-	def __init__(self,topic,details,location,happeningOn,tags):
+	def __init__(self,topic,details,location,happeningOn,Tags):
 		self.topic=topic
 		self.details=details
 		self.location=location
 
-		self.tags=tags
+		self.Tags=Tags
 		createdOn=date.today()
 		createdOn=createdOn.strftime("%d/%m/%Y")
 		#happeningOn=date.today() + datetime.timedelta(days=7)
@@ -36,7 +36,7 @@ class MeetupsModel():
 			"location":self.location,
 			"happeningOn":self.happeningOn,
 
-			"Tags":self.tags
+			"Tags":self.Tags
 			
 		}
 		Meetups.append(meetup)
@@ -46,7 +46,7 @@ class MeetupsModel():
 		"""check if meetup id is greater than length of dict"""
 
 		if m_id>len(Meetups):
-			return "The meetup record was not found"
+			return "The selected meetup record was not found"
 		meetup = Meetups[m_id-1]
 		meetup1 = {"m_id" : meetup["m_id"],"topic":meetup["topic"],"details":meetup["details"],"createdOn":meetup["createdOn"],"location":meetup["location"],
 
@@ -65,13 +65,13 @@ class MeetUpRsvps():
 
 	@classmethod
 	def add_rsvps(cls, m_id):
-		if m_id<len(Meetups):
+		if m_id<=len(Meetups):
 			m_ide = Meetups[m_id-1]
 			meetup1 = {"m_id" : m_ide["m_id"],
 				"topic":m_ide["topic"]
 				}
 			return meetup1
-		return "The meetup record was not found"
+		return "The selected meetup record was not found"
 				
 
 	
