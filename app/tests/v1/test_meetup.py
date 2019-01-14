@@ -22,7 +22,7 @@ class BaseTest(unittest.TestCase):
 		  "Lorem Lorem Ipsum has it all",
             "location": "Home",
             "happeningOn": "21/01/2019",
-            "tags": "coding"
+            "Tags": "coding"
 	 
 		}
 
@@ -34,7 +34,7 @@ class BaseTest(unittest.TestCase):
             "details": "Lorem Lorem Ipsum has it all",
             "location": "Home",
             "happeningOn": "21/01/2019",
-            "tags": "enjoy"
+            "Tags": "enjoy"
         }
 
     def tearDown(self):
@@ -120,5 +120,11 @@ class TestMeetup(BaseTest):
 			}
 		response = self.client.post('/api/v1//meetups/1/rsvps/', data=json.dumps(meetupd), content_type='application/json')
 		self.assertEqual(response.status_code,404)
-		
-		
+
+	def test_delete_fail(self):
+		response = self.client.delete('/api/v1/meetups/13/delete/', data=json.dumps(self.meetup2), content_type = 'application/json')
+		self.assertEqual(response.status_code,404)
+		self.assertEqual(json.loads(response.get_data()),{
+			"MESSAGE": "The selected meetup record was not found",
+    			"status": 404
+		})
