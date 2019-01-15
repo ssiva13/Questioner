@@ -89,7 +89,7 @@ ul{
 /*Showcase -------------- Brief explanation of Questioner*/
 #showcase{
 	min-height: 600px;
-	background: url(../img/index_bg.jpg) no-repeat;
+	background: url(../img/index_bg.jpg) repeat;
 	text-align: center;
 	color: #d9e6e2;
 }
