@@ -5,8 +5,18 @@ python:
 install:
     - pip3 install -r requirements.txt
 
+
+services:
+    - postgresql
+
+
+before_script:
+    - psql -c "CREATE DATABASE questioner_app;" -U postgres
+    - psql -c "CREATE DATABASE questioner_test;" -U postgres
+    - psql -c "GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public to postgres ;" -U postgres
+
 script:
-    - pytest
+    - py.test --cov=app -v
     - coverage run --source=app -m pytest && coverage report
 
 after_success:
