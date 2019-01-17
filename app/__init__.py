@@ -5,6 +5,7 @@ from instance.config import app_config
 from .api.v1.views.meetups_views import meetups_bp
 from .api.v1.views.question_views import question_bp
 from .api.v1.views.user_views import users_bp
+from .api.v2.views.user_views import user_v2
 
 
 
@@ -20,6 +21,7 @@ def create_app(config_name):
     app.register_blueprint(meetups_bp)
     app.register_blueprint(question_bp)
     app.register_blueprint(users_bp)
+    app.register_blueprint(user_v2)
 
 
 
