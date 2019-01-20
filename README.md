@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/4fe88809ada141b3867d33bf2a7fb40e)](https://app.codacy.com/app/ssiva13/Questioner?utm_source=github.com&utm_medium=referral&utm_content=ssiva13/Questioner&utm_campaign=Badge_Grade_Dashboard)
 [![Build Status](https://travis-ci.com/ssiva13/Questioner.svg?branch=develop)](https://travis-ci.com/ssiva13/Questioner)     [![Coverage Status](https://coveralls.io/repos/github/ssiva13/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/ssiva13/Questioner?branch=develop)
 
 # Questioner-api
