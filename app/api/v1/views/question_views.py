@@ -61,7 +61,7 @@ def upvote_que(q_id):
 @question_bp.route('/questions/<int:q_id>/downvote/', methods=['PATCH'])
 def downvote_que(q_id):
 	que = QuestionModel.vote_question(q_id)
-	if type(que)==dict:
+	if que:
 		que1 ={
 				"votes" : que["votes"] - 1,
 				"old_vote_count": que["votes"],

@@ -1,9 +1,9 @@
 from flask import Flask, Blueprint, jsonify, request, make_response
 from ..models.user_models import UserModels
 from werkzeug.security import generate_password_hash, check_password_hash
-from ..utils.validators import Validations, auth_required
+from ..utils.validators import Validations
 
-import jwt
+import jwt, secrets
 
 
 user_v2 = Blueprint("usersv2", __name__, url_prefix='/api/v2')
@@ -63,11 +63,6 @@ def register():
             "message": "Invalid email"
         })), 400
 
-    if validator.email_exists(email):
-        return make_response(jsonify({
-            "status": 400,
-            "message": "Email already exists"
-        })), 400
 
     password = generate_password_hash(
         password, method='pbkdf2:sha256', salt_length=2)
@@ -75,14 +70,13 @@ def register():
 
     user = UserModels()
     uers =user.signup(Name, email, phoneNumber, userName, isAdmin, password )
-    status = uers[1]
-    data = uers[0]
-    return make_response(jsonify( {"status": status,"User Data": data} )), 201
-
-
-
-
-
+    if uers:
+	    status = uers[1]
+	    data = uers[0]
+	    auth_token = user.generate_token(email)
+	    
+	    return make_response(jsonify( {"status": status, "User Data": data, "token":auth_token} )), status
+    return None
 
 
 
@@ -115,19 +109,19 @@ def login():
             "message": "Invalid email"
        })), 400
 
-    #password = check_password_hash(password, salt_length=2)
+    
 
     users = UserModels()
     user_logged =users.login(email)
     
     if user_logged:
         if check_password_hash(user_logged[1], password):
-            #auth_token = generate_auth_token(email)
+            auth_token = users.generate_token(email)
             return make_response(jsonify({
                 "status": 200,
                 "User Email": user_logged[0],
                 "User Password": user_logged[1],
-                "token": "auth_token"
+                "token": auth_token
             })), 200
         return make_response(jsonify({
             "status": 400,
@@ -136,8 +130,7 @@ def login():
     
     return make_response(jsonify({
         "status": 404,
-        "message": "User does not exist. Register??",
-        "uuhfgjhj": password
+        "message": "User does not exist. Register??"
     })), 404
 
 

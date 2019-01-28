@@ -4,7 +4,8 @@ class Config(object):
     """ Main configurations class """
     DEBUG = False
     JWT_SECRET_KEY = os.getenv('SECRET_KEY', 'my_secret')
-    DATABASE_URL = os.getenv('DATABASE_URL')
+    DATABASE_URL = os.getenv('DB_URL')
+    DATABASE_TEST_URL = os.getenv('DB_TEST_URL')
 
 class Development(Config):
     """ Development configurations are put here """

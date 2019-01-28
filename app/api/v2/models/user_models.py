@@ -1,7 +1,7 @@
 """ This model hadles users """
 
 from datetime import datetime, timedelta, date
-import os, jwt
+import os, jwt, json
 from instance.config import Config
 from app.conn import init_db
 
@@ -15,14 +15,21 @@ class UserModels(object):
     def __init__(self):
         self.USR = init_db()
         self.users = USERS
+
+
     
     def generate_token(self, email):
-        """ Generate auth token """
+        """ Token generation """
         try:
-            payload = {'exp': date.today() + timedelta(days=0, minutes=30, seconds=0), 'iat': datetime.utcnow(), 'sub': email}
-            return jwt.encode(payload, SECRET_KEY, algorithm='HS256').decode('utf-8')
+            	payload = {
+			  'exp': datetime.utcnow() + timedelta(minutes=30, seconds=0), 
+			  'iat': datetime.utcnow(),
+			  'sub': email
+			  }
+            	return jwt.encode(payload, SECRET_KEY, algorithm= 'HS256').decode('utf-8')
         except Exception as e:
-            return e
+            	return e
+
 
     def verify_token(self, auth_token):
         """Verify auth token """
@@ -66,6 +73,7 @@ class UserModels(object):
             user = cursor.fetchone()
             self.USR.commit()
             cursor.close()
+		  #auth_token = user.generate_token(email)
             status_code = 201
             data = [user, status_code]
 
