@@ -13,7 +13,7 @@ def create_app(config_name):
 
     """ Using the config file in instance folder to create app """
 
-    app = Flask(__name__, instance_relative_config=True)
+    app = Flask(__name__, instance_relative_config=True, template_folder= 'templates')
 
     app.config.from_object(app_config)
     
