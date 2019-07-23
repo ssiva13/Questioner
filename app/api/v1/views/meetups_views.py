@@ -1,5 +1,5 @@
 """HAndles Views meetup endpoints"""
-from flask import Blueprint, jsonify, request, make_response, json
+from flask import Blueprint, jsonify, request, make_response, json,  render_template
 from ..models.meetup_models import MeetupsModel
 from ..models.meetup_models import MeetUpRsvps
 from ..models.meetup_models import Meetups
@@ -16,7 +16,7 @@ meetups_bp = Blueprint("meetups",__name__, url_prefix='/api/v1/')
 @meetups_bp.route("/")
 def home():
 	urls = 'https://questioner13.herokuapp.com/api/v1/'
-	return urls
+	return render_template('index.html', urls = urls)
 
 
 """Endpoint to create A meetup"""
