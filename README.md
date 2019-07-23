@@ -62,10 +62,4 @@ It is a crowd-sourcing platform for meetup questions. Questioner helps the meetu
 ## Authors
 Simon Siva - [Simon Siva](https://github.com/ssiva13)
 
-## License
 
-
-## Acknowledgement
--Andela Workshops
--Team 1 members
--NBO36

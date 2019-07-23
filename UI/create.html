@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Questioner</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <script src="./js/popup.js"></script>     
+</head>
+<body class="reset">
+    <header class="mainHeader">
+	    <div class="container">
+		    <div id="brand">
+				<h1><span class="highlight">Questioner Admin Panel</span></h1>
+		    </div>
+		    <nav>
+			    <ul>
+					<li class="current"><a href="panel.html" >Back to Panel</a></li>
+			    </ul>
+		    </nav>
+	    </div>
+    </header>
+    <section id="join" class="reset">
+		<div class="container ">
+
+				<div class="form-container form-bg">
+
+					<h1>create meetup</h1>
+
+					<form action="panel.html" method="" class="">
+					<div class="tbox">
+						<label for="cpsw"><b>Title</b></label>
+						<input type="text" name="title" placeholder="Title" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Name...'" value="" required>
+					</div>
+					<div class="tbox">
+						<label for="cpsw"><b>Venue</b></label>
+						<input type="text" name="venue" placeholder="Venue" onfocus="this.placeholder = ''" onblur="this.placeholder = ' Venue...'" value="" required>
+					</div>
+					<div class="tbox">
+						<label for="cpsw"><b>Date</b></label>
+						<input type="date" name="date" required>
+					</div>
+					<div class="tbox">
+							<label for="cpsw"><b>Image</b></label>
+							<input type="file" name="thumbnail" accept="image/*">
+					</div>
+					<div class="tbox">
+							<label for="cpsw"><b>Details</b></label>
+							<textarea class="tbox" placeholder="Details" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Give a brief description of the meetup...'" value=""></textarea>
+					</div>
+						<input class=" btn sign button2" type="submit" name="" value="Create ">
+					
+					</form>
+				</div>
+
+			</div>
+
+
+		</section>
+		<footer class="mainFooter resetf">
+				<p>Questioner, Copyright &COPY; 2019 </p>
+			</footer>
+  </body>
+
+</html>
