@@ -1,38 +1,63 @@
-## Questioner
-It is a crowd-sourcing platform for meetup questions.  Questioner helps the meetup organizer prioritize questions to be answered.  Other users can vote on asked questions and they bubble to the top or bottom of the log.
+[![Build Status](https://travis-ci.com/ssiva13/Questioner.svg?branch=develop)](https://travis-ci.com/ssiva13/Questioner)     [![Coverage Status](https://coveralls.io/repos/github/ssiva13/Questioner/badge.svg?branch=develop)](https://coveralls.io/github/ssiva13/Questioner?branch=develop)
 
-The project is managed using.The board can be viewed on [Pivotal Tracker](https://www.pivotaltracker.com/n/projects/2235428).
+# Questioner-api
+It is a crowd-sourcing platform for meetup questions. Questioner helps the meetup organizer prioritize questions to be answered. Other users can vote on asked questions and they bubble to the top or bottom of the log.
 
-## Features
+## Prerequisites
+- Python 3.6.7 
+- Postman
 
-1. Admin can create meetups
-2. Users can sign up/ login
-3. Users can view available meetups
-4. Users can post questions to a meetup
-5. Users can upvote or downvote a question
-6. Questions are sorted based on the number of upvotes, thus allowing the meetup organizer to prioritize questions.
-7. Users can post comments to the questions
 
-## Additional features
+## Installation
+1. Clone this repository :
 
-- [ ] Admin can add images to a meetup
+	```
+    $ git clone https://github.com/ssiva13/Questioner.git
+    ```
 
-## Pre-requisites
+2. CD into the project folder on your machine
 
-- Firefox Browser
+	```
+    $ cd Questioner
+    ```
 
-## Testing
+3. Create a virtual environment
 
-Clone this repo on your machine in a folder of choice
+    ```
+    $ python3 -m venv venv
+    ```
 
-`$ https://github.com/ssiva13/Questioner.git
+4. Activate the virtual environment
 
-CD into the folder
+	```
+    $ source venv/bin/activate
+    ```
 
-`$ cd Questioner`
+5. Install the dependencies from the requirements file
 
-Open the `index.html` file on your browser
+	```
+    $ pip3 install -r requirements.txt
+    $ pip3 install python-dotenv
+    ```
 
-## Author
+6. Run the application
 
-Simon Siva - [ssiva13](https://ssiva13.github.io)
+    ```
+    python3 run.py
+    ```
+
+## Testing API endpoint
+
+| Endpoint                            				| HTTP Verb   | Functionality           			    |
+| ---------------------------------------------------- | ----------- | ------------------------------------------ |    
+| /api/v1/meetups                  				| POST        | Create a meetup record     			    |
+| /api/v1/meetups/<meetup_id>          				| GET         | Fetch a specific meetup record   		    |
+| /api/v1/meeetups/upcoming/          		 		| GET         | Fetch all upcoming meetup records          |
+| /api/v1/questions                				| POST        | Create a question for a specific meetup    |
+| /api/v1/questions/<question_id>/upvote			| PATCH       | Up-vote a specific question        	    |
+| /api/v1/questions/<question_id>/downvote			| PATCH       | Down-vote a specific question       	    |
+| /api/v1/add_meetups/<meetup_id>/rsvps   			| POST        | Create a question for a specific meetup    |
+--------------------------------------------------------------------------------------------------------------------
+
+## Authors
+Simon Siva - [Simon Siva](https://github.com/ssiva13)
