@@ -8,14 +8,18 @@
 
     <p><a href="meetups">See all Meetups -- </a> https://questioner13.herokuapp.com/api/v1/meetups</p>
 
-    <p><a href="meetups/1">Check One MeetUp -- </a> https://questioner13.herokuapp.com/api/v1/meetups/<meetup_id> eg meetup_id = 1</p>
+    <p><a href="meetups/1">Check One MeetUp -- </a> https://questioner13.herokuapp.com/api/v1/meetups/<int:m_id> eg m_id = 1</p>
 
     <p><a href="meeetups/upcoming/">Upcoming Meetups --- </a> https://questioner13.herokuapp.com/api/v1/meeetups/upcoming/</p>
 
-    <p><a href="questions/<question_id>/downvote">Downvote Question -- </a> https://questioner13.herokuapp.com/api/v1/questions/<question_id>/downvote  eg question_id =1 </p>
+    <p><a href="/questions"> Questions -- </a> https://questioner13.herokuapp.com/api/v1/questions</p>
 
-    <p><a href="questions/<question_id>/upvote">Upvote Question -- </a> https://questioner13.herokuapp.com/api/v1/questions/<question_id>/upvote  eg question_id =1 </p>
+    <p><a href="questions/1/downvote">Downvote Question -- </a> https://questioner13.herokuapp.com/api/v1/questions/<question_id>/downvote  eg question_id =1 </p>
 
-    <p><a href="add_meetups/<meetup_id>/rsvps">RSVP Meetup -- </a> https://questioner13.herokuapp.com/api/v1/add_meetups/<meetup_id>/rsvps  eg meetup_id = 1 </p>
+    <p><a href="questions/1/upvote">Upvote Question -- </a> https://questioner13.herokuapp.com/api/v1/questions/<question_id>/upvote  eg question_id =1 </p>
+
+    <p><a href="/meetups/1/rsvps/">RSVP Meetup -- </a> https://questioner13.herokuapp.com/api/v1/meetups/<int:m_id>/rsvps/  eg m_id = 1 </p>
+
+    <p><a href="/meetups/10/delete/">RSVP Meetup -- </a> https://questioner13.herokuapp.com/api/v1/meetups/<int:m_id>/delete/  eg m_id = 10 </p>
   </body>
 </html>

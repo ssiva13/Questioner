@@ -15,7 +15,7 @@ meetups_bp = Blueprint("meetups",__name__, url_prefix='/api/v1/')
 
 @meetups_bp.route("/")
 def home():
-	urls = 'https://questioner13.herokuapp.com/api/v1/'
+	urls = ''
 	return render_template('index.html', urls = urls)
 
 
